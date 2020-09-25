@@ -6,7 +6,7 @@ class Request < ApplicationRecord
     validates :lng, presence: true
 
     validates :request_type, presence: true
- 
+
     belongs_to :user
     
-end
+endll
