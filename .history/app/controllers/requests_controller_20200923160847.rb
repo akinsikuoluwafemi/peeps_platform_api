@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  # before_action :authenticate_user
+  before_action :authenticate_user
   before_action :set_request, only: [:show, :edit, :update, :destroy]
 
   # GET /requests
@@ -54,7 +54,7 @@ class RequestsController < ApplicationController
       else
         # format.html { render :edit }
         # format.json { render json: @request.errors, status: :unprocessable_entity }
-        render json: @request.errors, status: :unprocessable_entity
+        render json: @requestc.errors, status: :unprocessable_entity
       end
     # end
   end

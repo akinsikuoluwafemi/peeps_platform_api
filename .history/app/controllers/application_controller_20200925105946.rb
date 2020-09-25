@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
-    protect_from_forgery
+    # protect_from_forgery
     # include Knock::Authenticable
-    include Knock::Authenticable
 
     # before_action :authenticate_user
 
