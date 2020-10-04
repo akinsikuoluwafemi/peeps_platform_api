@@ -1,4 +1,5 @@
 # Rails.application.routes.draw do
+  resources :volunteers
 #   post 'user_token' => 'user_token#create'
 #   resources :users
 #   resources :requests
@@ -10,9 +11,6 @@ Rails.application.routes.draw do
     post '/signin', to: 'user_token#create'
     post '/signup', to: 'users#create'
   end
-
-    resources :volunteers
-
     resources :users
 
     resources :requests
