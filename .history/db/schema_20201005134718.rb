@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_132334) do
+ActiveRecord::Schema.define(version: 2020_10_05_122501) do
+
+  # create_table "request_users", force: :cascade do |t|
+  #   t.integer "request_id"
+  #   t.integer "user_id"
+  #   t.datetime "created_at", precision: 6, null: false
+  #   t.datetime "updated_at", precision: 6, null: false
+  # end
 
   create_table "requests", force: :cascade do |t|
     t.text "description"
@@ -23,12 +30,19 @@ ActiveRecord::Schema.define(version: 2020_10_05_132334) do
     t.integer "user_id"
   end
 
-  create_table "requests_users", force: :cascade do |t|
-    t.integer "request_id"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+  # create_table "requests_users", force: :cascade do |t|
+  #   t.integer "request_id"
+  #   t.integer "user_id"
+  #   t.datetime "created_at", precision: 6, null: false
+  #   t.datetime "updated_at", precision: 6, null: false
+  # end
+
+  # create_table "responders", force: :cascade do |t|
+  #   t.integer "request_id"
+  #   t.integer "user_id"
+  #   t.datetime "created_at", precision: 6, null: false
+  #   t.datetime "updated_at", precision: 6, null: false
+  # end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -38,5 +52,12 @@ ActiveRecord::Schema.define(version: 2020_10_05_132334) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
+  # create_table "volunteers", force: :cascade do |t|
+  #   t.integer "request_id"
+  #   t.integer "user_id"
+  #   t.datetime "created_at", precision: 6, null: false
+  #   t.datetime "updated_at", precision: 6, null: false
+  # end
 
 end
