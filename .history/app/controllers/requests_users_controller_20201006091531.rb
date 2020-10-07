@@ -23,7 +23,7 @@ class RequestsUsersController < ApplicationController
 
   # GET /requests_users/1/edit
   def edit
-
+    
   end
 
   # POST /requests_users
@@ -49,7 +49,7 @@ class RequestsUsersController < ApplicationController
 
   # PATCH/PUT /requests_users/1
   # PATCH/PUT /requests_users/1.json
-  def update 
+  def update
     # respond_to do |format|
       if @requests_user.update(requests_user_params)
         # format.html { redirect_to @requests_user, notice: 'Requests user was successfully updated.' }
