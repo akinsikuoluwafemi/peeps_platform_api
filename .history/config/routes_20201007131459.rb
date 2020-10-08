@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :messages_users
   resources :messages
   resources :requests_users
    scope '/auth' do
