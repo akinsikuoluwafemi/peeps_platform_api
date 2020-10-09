@@ -5,15 +5,13 @@ class MessagesUsersController < ApplicationController
   # GET /messages_users.json
   def index
     @messages_users = MessagesUser.all
-    render json: @messages_users
+    render json: @requests_users
 
   end
 
   # GET /messages_users/1
   # GET /messages_users/1.json
   def show
-    render json: @messages_user
-
   end
 
   # GET /messages_users/new

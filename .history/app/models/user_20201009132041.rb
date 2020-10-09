@@ -1,4 +1,4 @@
- class User < ApplicationRecord
+class User < ApplicationRecord
     has_secure_password
 
     validates :first_name, presence: true
@@ -15,8 +15,6 @@
     has_and_belongs_to_many :requests
     
     has_and_belongs_to_many :messages
-
-
 
 
 

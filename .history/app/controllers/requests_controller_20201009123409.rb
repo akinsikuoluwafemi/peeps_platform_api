@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
   def index
     @requests = Request.all
 
+    # wri
 
     render json: @requests
   end

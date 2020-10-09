@@ -12,8 +12,6 @@ class MessagesUsersController < ApplicationController
   # GET /messages_users/1
   # GET /messages_users/1.json
   def show
-    render json: @messages_user
-
   end
 
   # GET /messages_users/new

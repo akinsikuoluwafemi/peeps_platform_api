@@ -5,15 +5,11 @@ class MessagesUsersController < ApplicationController
   # GET /messages_users.json
   def index
     @messages_users = MessagesUser.all
-    render json: @messages_users
-
   end
 
   # GET /messages_users/1
   # GET /messages_users/1.json
   def show
-    render json: @messages_user
-
   end
 
   # GET /messages_users/new
@@ -83,7 +79,7 @@ class MessagesUsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def messages_user_params
       # params.fetch(:messages_user, {})
-      params.require(:messages_user).permit(:message_id, :user_id)
+      params.require(:requests_user).permit(:request_id, :user_id)
 
     end
 end
