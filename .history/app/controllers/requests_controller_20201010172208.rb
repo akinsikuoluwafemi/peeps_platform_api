@@ -31,7 +31,7 @@ class RequestsController < ApplicationController
   def create
     # @request = Request.new(request_params)
 
-    @request = current_user.requests.build(request_params)
+    @request = current_user.
 
 
     # respond_to do |format|

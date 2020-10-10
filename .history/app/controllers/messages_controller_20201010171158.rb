@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message.all
-    # @messages = MessagesUser.where(:user_id => current_user.id).order('created_at DESC')
+    # @messages = MessagesUser.where(:user_id => current_user.id)
 
 
     render json: @messages
@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
-
+    
   end
 
   # GET /messages/1/edit
@@ -33,8 +33,7 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    # @message = Message.new(message_params)
-    @message = current_user.messages.build(message_params)
+    @message = Message.new(message_params)
 
     # respond_to do |format|
       if @message.save

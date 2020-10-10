@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message.all
-    # @messages = MessagesUser.where(:user_id => current_user.id).order('created_at DESC')
+    # @messages = MessagesUser.where(:user_id => current_user.id).order('')
 
 
     render json: @messages
