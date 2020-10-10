@@ -1,12 +1,11 @@
 class MessagesController < ApplicationController
-  # before_action :authenticate_user
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
-    # @messages = MessagesUser.where(:user_id => current_user.id)
+    # @messages = Message.all
+    @messages = MessagesUser
 
 
     render json: @messages

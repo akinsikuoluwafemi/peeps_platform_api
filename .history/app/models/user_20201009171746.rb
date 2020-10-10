@@ -1,6 +1,6 @@
  class User < ApplicationRecord
     def self.from_token_request(request)
-        User.find_by(email: request.params[:auth][:email])
+        User.find_by(name: request.params[:auth][:email])
     end
     
     has_secure_password
