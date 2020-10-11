@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
-  before_action :authenticate_user  #,except: [:create, :show]
-  before_action :set_request, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user  #,except: [:create, :show]
+  # before_action :set_request, only: [:show, :edit, :update, :destroy]
 
   # GET /requests
   # GET /requests.json
@@ -29,7 +29,7 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    # @request = Request.new(request_params)
+    @request = Request.new(request_params)
 
     @request = current_user.requests.build(request_params)
 

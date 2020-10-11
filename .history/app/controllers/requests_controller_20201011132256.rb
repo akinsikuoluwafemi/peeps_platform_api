@@ -29,7 +29,7 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    # @request = Request.new(request_params)
+    @request = Request.new(request_params)
 
     @request = current_user.requests.build(request_params)
 
