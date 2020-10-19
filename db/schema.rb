@@ -10,20 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_09_133047) do
+ActiveRecord::Schema.define(version: 2020_10_16_085722) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-  end
-
-  create_table "messages_users", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.integer "message_id"
+    t.integer "room_id"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -40,6 +34,12 @@ ActiveRecord::Schema.define(version: 2020_10_09_133047) do
   create_table "requests_users", force: :cascade do |t|
     t.integer "request_id"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
