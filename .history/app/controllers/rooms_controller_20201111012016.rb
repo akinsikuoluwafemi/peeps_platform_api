@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
   def index
     @rooms = Room.all
 
-    render json: @rooms
+    # render json: @rooms
 
   end
 

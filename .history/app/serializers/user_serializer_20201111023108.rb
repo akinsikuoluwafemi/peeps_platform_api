@@ -20,7 +20,9 @@ class UserSerializer < ActiveModel::Serializer
 
   end
 
- 
+  def url
+
+  end
 
 
  

@@ -20,7 +20,9 @@ class UserSerializer < ActiveModel::Serializer
 
   end
 
- 
+  def avatar
+    avatar_url(object)
+  end
 
 
  

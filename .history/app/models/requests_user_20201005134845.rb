@@ -1,2 +1,0 @@
-class RequestsUser < ApplicationRecord
-end
