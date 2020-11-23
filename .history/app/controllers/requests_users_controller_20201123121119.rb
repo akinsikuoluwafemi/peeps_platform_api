@@ -55,9 +55,8 @@ class RequestsUsersController < ApplicationController
             if RequestsUser.where(user_id: vol.user_id, request_id: vol.request_id).count > 0
             return true
              
-            else
-            return false
-              
+            
+        
         end
       end
 

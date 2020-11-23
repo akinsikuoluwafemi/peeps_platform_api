@@ -51,15 +51,14 @@ class RequestsUsersController < ApplicationController
   end
 
   def samevolunteer
-        RequestsUser.all.each do |vol|
-            if RequestsUser.where(user_id: vol.user_id, request_id: vol.request_id).count > 0
-            return true
-             
-            else
-            return false
-              
-        end
-      end
+    RequestsUser.all.each do |vol|
+   if RequestsUser.where(user_id: vol.user_id, request_id: vol.request_id).count > 0
+2.7.0 :159 >   puts "true"
+2.7.0 :160 >   else
+2.7.0 :161 >   puts "false"
+2.7.0 :162 >   
+2.7.0 :163 >   end
+2.7.0 :164 > end
 
   end
 

@@ -8,7 +8,7 @@ class RequestsUsersController < ApplicationController
     @requests_users = RequestsUser.all
     render json: @requests_users
 
-    # write query here femi
+    # write query here fem
 
   end
 
@@ -49,21 +49,6 @@ class RequestsUsersController < ApplicationController
       end
     # end
   end
-
-  def samevolunteer
-        RequestsUser.all.each do |vol|
-            if RequestsUser.where(user_id: vol.user_id, request_id: vol.request_id).count > 0
-            return true
-             
-            else
-            return false
-              
-        end
-      end
-
-  end
-
-
 
   # PATCH/PUT /requests_users/1
   # PATCH/PUT /requests_users/1.json

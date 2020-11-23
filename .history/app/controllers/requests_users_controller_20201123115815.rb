@@ -53,11 +53,10 @@ class RequestsUsersController < ApplicationController
   def samevolunteer
         RequestsUser.all.each do |vol|
             if RequestsUser.where(user_id: vol.user_id, request_id: vol.request_id).count > 0
-            return true
-             
+          render json: true
             else
-            return false
-              
+          render json: false
+        
         end
       end
 

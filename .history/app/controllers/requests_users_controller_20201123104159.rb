@@ -50,21 +50,6 @@ class RequestsUsersController < ApplicationController
     # end
   end
 
-  def samevolunteer
-        RequestsUser.all.each do |vol|
-            if RequestsUser.where(user_id: vol.user_id, request_id: vol.request_id).count > 0
-            return true
-             
-            else
-            return false
-              
-        end
-      end
-
-  end
-
-
-
   # PATCH/PUT /requests_users/1
   # PATCH/PUT /requests_users/1.json
   def update 
