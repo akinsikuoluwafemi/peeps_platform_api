@@ -51,22 +51,8 @@ class RequestsUsersController < ApplicationController
     # end
   end
 
-  # def samevolunteer
-  #   @click = RequestsUser.where(user_id: current_user, request_id: current_req).count > 0
-
-  #   if @click 
-  #     render json: true
-
-  #   else
-  #     render json: false
-
-  #   end
-
-
-  # end
-
   def samevolunteer
-    @click = RequestsUser.group(:user_id, :request_id).having("count(user_id) == 1")
+    @click = RequestsUser.where(user_id: current_user, request_id: 27).count > 0
 
     if @click 
       render json: true

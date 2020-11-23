@@ -65,20 +65,6 @@ class RequestsUsersController < ApplicationController
 
   # end
 
-  def samevolunteer
-    @click = RequestsUser.group(:user_id, :request_id).having("count(user_id) == 1")
-
-    if @click 
-      render json: true
-
-    else
-      render json: false
-
-    end
-
-
-  end
-
 
 
   # PATCH/PUT /requests_users/1
