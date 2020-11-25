@@ -33,7 +33,8 @@ class RequestsUsersController < ApplicationController
   # POST /requests_users.json
   def create
     @requests_user = RequestsUser.new(requests_user_params)
-   
+    @requests_user.user = current_user
+     @requests_user.request = current_req
     # respond_to do |format|
       if @requests_user.save
         # format.html { redirect_to @requests_user, notice: 'Requests user was successfully created.' }
@@ -52,8 +53,9 @@ class RequestsUsersController < ApplicationController
 
   def samevolunteer
     
-    @click = RequestsUser.where(user_id: current_user, request_id: params[:id]).count == 1
-    if @click
+    # @click = RequestsUser.where(user_id:current_user, request_id:current_req).count == 2
+    @click = RequestsUser.where(user_id: current_user, request_id: 27).count == 1
+    if @click 
       render json: true
 
     else @click
@@ -63,6 +65,19 @@ class RequestsUsersController < ApplicationController
 
   end
 
+  # def samevolunteer
+  #   @click = RequestsUser.group(:user_id, :request_id).having("count(user_id) > 0")
+
+  #   if @click 
+  #     render json: true
+
+  #   else
+  #     render json: false
+
+  #   end
+
+
+  # end
 
 
 

@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     resources :requests
     mount ActionCable.server => '/cable'
 
-    get 'samevolunteer/:id', to: 'requests_users#samevolunteer'
+    get 'samevolunteer/:', to: 'requests_users#samevolunteer'
 
 end

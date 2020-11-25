@@ -33,7 +33,8 @@ class RequestsUsersController < ApplicationController
   # POST /requests_users.json
   def create
     @requests_user = RequestsUser.new(requests_user_params)
-   
+    @requests_user.user = current_user
+     @requests_user.request = current_req
     # respond_to do |format|
       if @requests_user.save
         # format.html { redirect_to @requests_user, notice: 'Requests user was successfully created.' }

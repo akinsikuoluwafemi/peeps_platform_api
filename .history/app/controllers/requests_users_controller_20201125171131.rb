@@ -52,7 +52,7 @@ class RequestsUsersController < ApplicationController
 
   def samevolunteer
     
-    @click = RequestsUser.where(user_id: current_user, request_id: params[:id]).count == 1
+    @click = RequestsUser.where(user_id: current_user, request_id: params[:id]).count == 0
     if @click
       render json: true
 
