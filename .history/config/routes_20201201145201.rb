@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     
     get 'fulfilrequest/:id', to: 'requests_users#fulfilrequest'
 
-    get 'volunteeredroomid/:name', to: 'rooms#volunteeredroomid'
+    get 'volunteered'
     
     post 'http://localhost:3001/rails/active_storage/direct_uploads', to: 'direct_uploads#create'
     

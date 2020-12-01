@@ -45,17 +45,21 @@ class RoomsController < ApplicationController
   end
 
   def volunteeredroomid
+    # @volunteeredid = Room.where(name: "Kindly help us use your voice to spread #EndSARS thanks.")
     @volunteeredid = Room.where(name: params[:name])
 
 
     if @volunteeredid
       render json: @volunteeredid.ids
 
+
+
     end
 
 
   end
 
+lat
 
 
   # PATCH/PUT /rooms/1

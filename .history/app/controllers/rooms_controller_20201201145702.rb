@@ -43,18 +43,8 @@ class RoomsController < ApplicationController
       end
     # end
   end
+  
 
-  def volunteeredroomid
-    @volunteeredid = Room.where(name: params[:name])
-
-
-    if @volunteeredid
-      render json: @volunteeredid.ids
-
-    end
-
-
-  end
 
 
 

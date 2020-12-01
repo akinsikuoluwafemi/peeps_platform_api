@@ -14,11 +14,3 @@
 #     filename: 'image1.png',
 #     content_type: 'application/png'
 # )
-
-Request.create([{
-    description: "I need a fan",
-    lat: 60.128162,
-    lng: 18.643501,
-    request_type: "material-need",
-    user_id: 6
-}])
