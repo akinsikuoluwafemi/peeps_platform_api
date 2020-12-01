@@ -50,10 +50,6 @@ class MessagesController < ApplicationController
     # @message.user = current_user
     # @message = @room.messages.new(message_params) 
 
-    @message = Message.new(message_params)
-    @room = Room.find(message_params[:room_id])
-
-
 
       if @message.save
         # serialized_data = ActiveModelSerializers::Adapter::Json.new(
@@ -62,9 +58,9 @@ class MessagesController < ApplicationController
         # MessagesChannel.broadcast_to @room, serialized_data
         # head :ok
          RoomsChannel.broadcast_to(@room, {
-          room: @room,
-          users: @room.users,
-          messages: @room.messages
+          room: RoomSerializer.new(@room),
+          users: UserSerializer.new(@room.users),
+          messages: MessageSerializer.new(@room.messages)
         })
 
 

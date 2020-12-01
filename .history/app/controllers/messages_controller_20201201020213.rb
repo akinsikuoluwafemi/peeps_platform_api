@@ -62,9 +62,9 @@ class MessagesController < ApplicationController
         # MessagesChannel.broadcast_to @room, serialized_data
         # head :ok
          RoomsChannel.broadcast_to(@room, {
-          room: @room,
-          users: @room.users,
-          messages: @room.messages
+          room: @room),
+          users: UserSerializer.new(@room.users),
+          messages: MessageSerializer.new(@room.messages)
         })
 
 

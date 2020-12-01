@@ -45,14 +45,9 @@ class MessagesController < ApplicationController
 
 
     # @message = Message.new(message_params)
-    # @message = current_user.messages.build(message_params)
-    # @room = Room.find(message_params[:room_id])
-    # @message.user = current_user
-    # @message = @room.messages.new(message_params) 
-
-    @message = Message.new(message_params)
+    @message = current_user.messages.build(message_params)
     @room = Room.find(message_params[:room_id])
-
+    # @message = @room.messages.new(message_params) 
 
 
       if @message.save
@@ -61,17 +56,9 @@ class MessagesController < ApplicationController
         # ).serializable_hash
         # MessagesChannel.broadcast_to @room, serialized_data
         # head :ok
-         RoomsChannel.broadcast_to(@room, {
-          room: @room,
-          users: @room.users,
-          messages: @room.messages
-        })
-
-
+        render json: @message, status: :created, location: @message
 
       end
-        render json: @message
-
   end
 
   # PATCH/PUT /messages/1

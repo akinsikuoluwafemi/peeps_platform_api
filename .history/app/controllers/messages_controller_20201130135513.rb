@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  # before_action :authenticate_user
+  before_action :authenticate_user
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
@@ -45,14 +45,10 @@ class MessagesController < ApplicationController
 
 
     # @message = Message.new(message_params)
-    # @message = current_user.messages.build(message_params)
-    # @room = Room.find(message_params[:room_id])
+    @message = current_user.messages.build(message_params)
+    @room = Room.find(message_params[:room_id])
     # @message.user = current_user
     # @message = @room.messages.new(message_params) 
-
-    @message = Message.new(message_params)
-    @room = Room.find(message_params[:room_id])
-
 
 
       if @message.save
@@ -62,9 +58,9 @@ class MessagesController < ApplicationController
         # MessagesChannel.broadcast_to @room, serialized_data
         # head :ok
          RoomsChannel.broadcast_to(@room, {
-          room: @room,
-          users: @room.users,
-          messages: @room.messages
+          room: RoomSerializer.new(@room),
+          users: UserSerializer.new(@room.users),
+          messages: MessageSerializer.new(@room.messages)
         })
 
 

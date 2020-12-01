@@ -64,7 +64,7 @@ class MessagesController < ApplicationController
          RoomsChannel.broadcast_to(@room, {
           room: @room,
           users: @room.users,
-          messages: @room.messages
+          messages: MessageSerializer.new(@room.messages)
         })
 
 

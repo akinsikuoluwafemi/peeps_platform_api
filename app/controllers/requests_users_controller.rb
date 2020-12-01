@@ -64,7 +64,7 @@ class RequestsUsersController < ApplicationController
   end
 
   def fulfilrequest
-    
+    # 'updated_at' < 1.day.ago
     @fulfiled = RequestsUser.where(request_id: params[:id]).count == 5
     if @fulfiled
       render json: true

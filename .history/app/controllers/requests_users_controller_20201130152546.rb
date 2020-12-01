@@ -10,7 +10,6 @@ class RequestsUsersController < ApplicationController
 
     # write query here femi
 
-
   end
 
   # GET /requests_users/1
@@ -34,7 +33,7 @@ class RequestsUsersController < ApplicationController
   # POST /requests_users.json
   def create
     @requests_user = RequestsUser.new(requests_user_params)
-
+   
     # respond_to do |format|
       if @requests_user.save
         # format.html { redirect_to @requests_user, notice: 'Requests user was successfully created.' }
@@ -50,6 +49,36 @@ class RequestsUsersController < ApplicationController
       end
     # end
   end
+
+  def samevolunteer
+    
+    @click = RequestsUser.where(user_id: current_user, request_id: params[:id]).count == 1
+    if @click
+      render json: true
+
+    else @click
+      render json: false
+
+    end
+
+  end
+
+  def fulfilrequest
+    # 'updated_at' < 1.day.ago
+    @fulfiled = RequestsUser.where(request_id: params[:id]).count == 5
+    if @fulfiled
+      render json: true
+
+    else @fulfiled
+      render json: false
+
+    end
+
+  end
+
+  
+
+
 
   # PATCH/PUT /requests_users/1
   # PATCH/PUT /requests_users/1.json
