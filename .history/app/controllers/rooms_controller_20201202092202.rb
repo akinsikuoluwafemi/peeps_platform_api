@@ -44,6 +44,19 @@ class RoomsController < ApplicationController
     # end
   end
 
+  def volunteeredroomid
+    @volunteeredid = Room.where(name: params[:name])
+
+
+    if @volunteeredid
+      render json: @volunteeredid.ids
+
+    end
+
+
+  end
+
+
 
   # PATCH/PUT /rooms/1
   # PATCH/PUT /rooms/1.json

@@ -45,6 +45,7 @@ class RoomsController < ApplicationController
   end
 
 
+
   # PATCH/PUT /rooms/1
   # PATCH/PUT /rooms/1.json
   def update

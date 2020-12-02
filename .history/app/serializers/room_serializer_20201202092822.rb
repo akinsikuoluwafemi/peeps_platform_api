@@ -4,4 +4,5 @@ class RoomSerializer < ActiveModel::Serializer
 
   has_many :users, through: :messages
 
+
 end
