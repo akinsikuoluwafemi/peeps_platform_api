@@ -4,6 +4,7 @@
     def self.from_token_request(request)
         User.find_by(email: request.params[:auth][:email])
     end
+
     
 
     has_one_attached :avatar

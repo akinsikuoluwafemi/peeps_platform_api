@@ -4,7 +4,10 @@
     def self.from_token_request(request)
         User.find_by(email: request.params[:auth][:email])
     end
-    
+
+     def to_token_payload
+    # Returns the payload as a hash
+    end
 
     has_one_attached :avatar
 

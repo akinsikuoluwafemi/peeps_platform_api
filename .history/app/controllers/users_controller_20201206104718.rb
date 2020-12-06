@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user,except: [:create, :show]
+  before_action :authenticate_user,except: [:create, :show]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -44,8 +44,7 @@ class UsersController < ApplicationController
         # format.html { redirect_to @user, notice: 'User was successfully created.' }
         # format.json { render :show, status: :created, location: @user }
         # render json: @user, status: :created
-        auth_token = Knock::AuthToken.new payload: { sub: @user.id }
-        render json: {user: @user, token: auth_token} , status: :created
+        render json: @user , status: :created
 
        
       else
@@ -101,25 +100,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-
-    def auth_token
-      if entity.respond_to? :to_token_payload
-        AuthToken.new payload: entity.to_token_payload
-      else
-        AuthToken.new payload: { sub: entity.id }
-      end
-    end
-
-
-
-
-
-
     # Only allow a list of trusted parameters through.
     def user_params
       # params.require(:auth).permit(:first_name, :last_name, :email, :password, :avatar)
       params.require(:auth).permit(:first_name, :last_name, :email, :password, :avatar)
 
     end
-    
 end

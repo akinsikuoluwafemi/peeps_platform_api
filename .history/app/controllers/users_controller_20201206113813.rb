@@ -44,7 +44,6 @@ class UsersController < ApplicationController
         # format.html { redirect_to @user, notice: 'User was successfully created.' }
         # format.json { render :show, status: :created, location: @user }
         # render json: @user, status: :created
-        auth_token = Knock::AuthToken.new payload: { sub: @user.id }
         render json: {user: @user, token: auth_token} , status: :created
 
        
@@ -102,13 +101,7 @@ class UsersController < ApplicationController
     end
 
 
-    def auth_token
-      if entity.respond_to? :to_token_payload
-        AuthToken.new payload: entity.to_token_payload
-      else
-        AuthToken.new payload: { sub: entity.id }
-      end
-    end
+    
 
 
 

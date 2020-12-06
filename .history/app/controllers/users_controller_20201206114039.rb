@@ -44,7 +44,7 @@ class UsersController < ApplicationController
         # format.html { redirect_to @user, notice: 'User was successfully created.' }
         # format.json { render :show, status: :created, location: @user }
         # render json: @user, status: :created
-        auth_token = Knock::AuthToken.new payload: { sub: @user.id }
+        auth_token = Knock::AuthToken.new payload: { sub: user.id }
         render json: {user: @user, token: auth_token} , status: :created
 
        
