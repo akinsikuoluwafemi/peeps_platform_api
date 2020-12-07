@@ -34,6 +34,8 @@ class UsersController < ApplicationController
     
     @user = User.new(user_params)
     
+    # @user = url_for(@user.avatar)
+    # user.avatar.attach(params[:avatar])
 
 
     

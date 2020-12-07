@@ -34,6 +34,8 @@ class UsersController < ApplicationController
     
     @user = User.new(user_params)
     
+    # @user = url_for(@user.avatar)
+    # user.avatar.attach(params[:avatar])
 
 
     
@@ -50,11 +52,27 @@ class UsersController < ApplicationController
       else
         # format.html { render :new }
         # format.json { render json: @user.errors.full_messages, status: :unprocessable_entity }
-        render json: @user.errors.full_messages, status: :unprocessable_entity
+        render json: @user.errors, status: :unprocessable_entity
       end
     # end
   end
 
+  # PATCH/PUT /users/1
+  # PATCH/PUT /users/1.json
+  # def update
+  #   # respond_to do |format|
+  #     if @user.update(user_params)
+  #       # format.html { redirect_to @user, notice: 'User was successfully updated.' }
+  #       # format.json { render :show, status: :ok, location: @user }
+  #       render json: @user
+  #     else
+  #       # format.html { render :edit }
+  #       # format.json { render json: @user.errors, status: :unprocessable_entity }
+  #       render json: @user.errors, status: :unprocessable_entity
+
+  #     end
+  #   # end
+  # end
 
     def update
       @user.update(user_params)
@@ -96,6 +114,7 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
+      # params.require(:auth).permit(:first_name, :last_name, :email, :password, :avatar)
       params.require(:auth).permit(:first_name, :last_name, :email, :password, :avatar)
 
     end

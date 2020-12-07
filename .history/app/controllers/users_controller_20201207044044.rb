@@ -34,6 +34,8 @@ class UsersController < ApplicationController
     
     @user = User.new(user_params)
     
+    # @user = url_for(@user.avatar)
+    # user.avatar.attach(params[:avatar])
 
 
     
@@ -50,7 +52,7 @@ class UsersController < ApplicationController
       else
         # format.html { render :new }
         # format.json { render json: @user.errors.full_messages, status: :unprocessable_entity }
-        render json: @user.errors.full_messages, status: :unprocessable_entity
+        render json: @user.errors, status: :unprocessable_entity
       end
     # end
   end

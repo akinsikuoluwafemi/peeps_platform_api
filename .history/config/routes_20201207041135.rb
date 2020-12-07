@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   
-    resources :users
+    resources :users, only: [:index, :create, :show, :patch]
 
     resources :requests
     mount ActionCable.server => '/cable'
@@ -25,5 +25,6 @@ Rails.application.routes.draw do
     
     post 'rails/active_storage/direct_uploads', to: 'direct_uploads#create'
     
+    get 'getlast', to: 'users#getlast'
 
 end
