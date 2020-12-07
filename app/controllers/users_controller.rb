@@ -59,7 +59,7 @@ class UsersController < ApplicationController
     def update
       @user.update(user_params)
       @avatar_url = rails_blob_path(@user.avatar)
-      render json: {user: @user,  avatar_url: avatar_url}
+      render json: {user: @user,  avatar_url: @avatar_url}
     end
 
   def getlast 
