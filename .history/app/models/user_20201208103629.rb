@@ -7,7 +7,7 @@
     has_one_attached :avatar
 
     validates :first_name, presence: true
-    # validates :first_name, length: { minimum: 4 }
+    validates :first_name, length: { minimum: 4 }
 
     # validates :last_name, presence: true
     # validates :last_name, length: { minimum: 4 }

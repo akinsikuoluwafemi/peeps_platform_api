@@ -8,12 +8,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "user should be valid" do
-    assert @user.valid?, "The user is not valid"
+    assert @user.valid?
   end
   
   test "firstname should be present" do 
     @user.first_name = " "
-    assert_not @user.valid?, "first_name should be present"
+    aser
   end
 
   test "firstname should not be too short" do

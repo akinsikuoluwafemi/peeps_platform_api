@@ -5,11 +5,11 @@ one:
   lat: 1.5
   lng: 1.5
   fulfilled: false
-  request_type:
+  type: 
 
 two:
   description: MyText
   lat: 1.5
   lng: 1.5
   fulfilled: false
-  request_type: 
+  type: 

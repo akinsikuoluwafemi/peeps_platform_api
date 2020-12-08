@@ -5,7 +5,8 @@ one:
   lat: 1.5
   lng: 1.5
   fulfilled: false
-  request_type:
+  request_type
+: 
 
 two:
   description: MyText
