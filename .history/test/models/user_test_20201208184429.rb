@@ -58,9 +58,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
 
-  test "email should be unique" do 
+  # test "email should be unique" do 
 
-  end
+  # end
 
 
 

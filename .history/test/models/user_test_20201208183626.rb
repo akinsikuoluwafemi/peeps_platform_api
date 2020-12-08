@@ -36,11 +36,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?, "last_name is too short"
   end
 
-   test "lastname should not be too long" do
-    @user.last_name = "a" * 25
-    assert_not @user.valid?, "last_name is too long"
-  end
-
   test "email should be present" do 
       @user.email = " "
       assert_not @user.valid?, "email should be present"
