@@ -90,6 +90,6 @@ class UsersController < ApplicationController
 
 
     # Only allow a list of trusted parameters through.
-  
+  re
     
 end
