@@ -56,7 +56,11 @@ class MessagesController < ApplicationController
 
 
       if @message.save
-       
+        # serialized_data = ActiveModelSerializers::Adapter::Json.new(
+        #   MessageSerializer.new(@message)
+        # ).serializable_hash
+        # MessagesChannel.broadcast_to @room, serialized_data
+        # head :ok
          RoomsChannel.broadcast_to(@room, {
           room: @room,
           users: @room.users,
