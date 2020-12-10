@@ -1,6 +1,0 @@
-production:
-  cloud_name: "dt69gb9me"
-  api_key: "561255233184312"
-  api_secret: "D7_vXN-NhX04x23q9Sh0umhJQb8"
-  secure: true
-  cdn_subdomain: true
