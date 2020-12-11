@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # default_url_options :host => "localhost:3001"
-  default_url_options :host => "peeps-platform.herokuapp.com"
+  default_url_options :host => "https://peeps-platform.herokuapp.com"
 
 
 
