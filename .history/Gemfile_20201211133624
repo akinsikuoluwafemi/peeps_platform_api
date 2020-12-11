@@ -56,10 +56,10 @@ group :test do
 end
 
 
-  gem 'pg'
 
 
 group :production do
+  gem 'pg'
 
 end
 
