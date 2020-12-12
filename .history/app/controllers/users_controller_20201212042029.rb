@@ -60,9 +60,9 @@ class UsersController < ApplicationController
       render json: {user: @user,  avatar_url: @avatar_url}
     end
 
-    def get_user 
-      @user = User.where(email: current_user)
-      render json:  @user
+    def get_current_user 
+      @user = User.where(email: "akinsiku.o@yahoo.com")
+      return 
     end
 
   

@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     end
 
     def get_user 
-      @user = User.where(email: current_user)
+      @user = User.where(email: current)
       render json:  @user
     end
 

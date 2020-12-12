@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     
     get 'fulfilrequest/:id', to: 'requests_users#fulfilrequest'
 
-    get 'getuser', to: 'users#get_user'
+    get 'getuser', to: 'users#get'
 
     
     post 'rails/active_storage/direct_uploads', to: 'direct_uploads#create'
