@@ -2,9 +2,9 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
-  def setup
-    @user = User.new(first_name: "Simon", last_name: "Sinek", email: "simon@yahoo.com", password: "simonsinek")
-  end
+  # def setup
+  #   @user = User.new(first_name: "Simon", last_name: "Sinek", email: "simon@yahoo.com", password: "simonsinek")
+  # end
   #  def setup
   #   @user = User.new(first_name: "Simon", last_name: "Sinek", email: "simon@yahoo.com", password: "simonsinek", avatar:fixture_file_upload(Rails.root.join('public', 'image1.jpg'), 'image/jpg'))
   # end

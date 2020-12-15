@@ -45,18 +45,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to users_url
   end
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
 end

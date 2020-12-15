@@ -35,8 +35,9 @@ google:
     token_uri: "https://accounts.google.com/o/oauth2/token"
     auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
     client_x509_cert_url: <%= ENV['GCS_CLIENT_X509_CERT_URL'] %>
-  project: <%= ENV['GCS_PROJECT'] %>
-  bucket: <%= ENV['GCS_BUCKET'] %>
+
+  project: "fastrace"
+  bucket: "aidplatform-activestorage"
 
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
