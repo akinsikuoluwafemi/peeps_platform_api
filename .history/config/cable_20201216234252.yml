@@ -9,7 +9,7 @@ test:
 
 production:
   adapter: redis
-  url: redis-clean-53362
+  url: redistogo-deep-60008
   channel_prefix: peeps_platform_api_production
 
 
