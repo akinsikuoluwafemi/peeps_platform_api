@@ -25,7 +25,7 @@ gem 'knock'
 gem 'hirb'
 gem 'google-cloud-storage'
 gem 'redis-namespace'
-gem 'redis-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
