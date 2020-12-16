@@ -43,11 +43,11 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   config.action_cable.mount_path = "/cable"
-  config.action_cable.url = "wss://redis-clean-53362.herokuapp.com/cable"
+  config.action_cable.url = "wss://peeps-frontend.vercel.app"
 
 
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-  config.action_cable.allowed_request_origins = [ 'https://peeps-frontend.vercel.app', /http:\/\/peeps-frontend.vercel.app.*/ ]
+  config.action_cable.allowed_request_origins = [ 'https://peeps-frontend.vercel.app',  /https:\/\/peeps-frontend.*/ ]
   # config.action_cable.disable_request_forgery_protection = true
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
