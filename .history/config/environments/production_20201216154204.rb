@@ -42,8 +42,8 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain.
-  config.action_cable.mount_path = "/cable"
-  config.action_cable.url = "wss://peeps-frontend.vercel.app"
+  config.action_cable.mount_path = ""
+  config.action_cable.url = "wss://peeps-frontend.vercel.app'
 
 
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
