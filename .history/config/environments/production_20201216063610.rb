@@ -46,7 +46,7 @@ Rails.application.configure do
   config.action_cable.url = 'wss://peeps-frontend.vercel.app/cable'
 
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-  # config.action_cable.allowed_request_origins = [ 'https://peeps-frontend.vercel.app' ]
+  config.action_cable.allowed_request_origins = [ 'https://peeps-frontend.vercel.app' ]
   # config.action_cable.disable_request_forgery_protection = true
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
@@ -61,7 +61,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  # config.cache_store = :redis_cache_store, { url: "redis://localhost:6379/0" } 
+  config.cache_store = :redis_cache_store, { url: "redis://localhost:6379/0" } 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "peeps_platform_api_production"
