@@ -10,6 +10,7 @@ test:
 production:
   adapter: redis
   url: <%= ENV['REDIS_URL'] %>
+
   channel_prefix: peeps_platform_api_production
 
 
