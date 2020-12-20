@@ -11,11 +11,13 @@ class UserSerializer < ActiveModel::Serializer
         .slice('filename', 'byte_size')
         .merge(url: avatar_url)
         .tap { |attrs| attrs['name'] = attrs.delete('filename') }
+
     end
 
     def avatar_url 
-     url_for(object.avatar)
+    url_for(object.avatar)
 
-    end
+  end
+
  
 end

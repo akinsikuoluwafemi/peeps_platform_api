@@ -6,11 +6,7 @@ development:
 test:
   adapter: test
 
-production:
-  adapter: redis
-  url: <%= ENV.fetch("redis://127.0.0.1") %>/<%= ENV.fetch("6379") %>
-  channel_prefix: peeps_platform_api_production
-
+  
 
 # production:
 #   adapter: redis
