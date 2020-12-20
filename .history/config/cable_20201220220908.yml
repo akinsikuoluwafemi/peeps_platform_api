@@ -11,3 +11,4 @@ production:
   adapter: redis
   url: <%= ENV.fetch("REDIS_URL") %>
   channel_prefix: peeps_platform_api_production
+
