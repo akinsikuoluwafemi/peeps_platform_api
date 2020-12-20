@@ -17,5 +17,6 @@ class UserSerializer < ActiveModel::Serializer
      url_for(object.avatar)
 
     end
+
  
 end

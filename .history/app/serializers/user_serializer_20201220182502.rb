@@ -9,13 +9,16 @@ class UserSerializer < ActiveModel::Serializer
 
     object.avatar.blob.attributes
         .slice('filename', 'byte_size')
-        .merge(url: avatar_url)
-        .tap { |attrs| attrs['name'] = attrs.delete('filename') }
-    end
+          .merge(url: avatar_url)
+          .tap { |attrs| attrs['name'] = attrs.delete('filename') }
 
-    def avatar_url 
-     url_for(object.avatar)
+    
+  end
 
-    end
+  def avatar_url 
+    url_for(object.avatar)
+
+  end
+
  
 end

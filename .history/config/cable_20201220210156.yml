@@ -9,7 +9,8 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("redis://:pcaaab2793fe3aa0e0ae093e46cfd8babd250db39062f43dfe09ca69bbfe1fce2@ec2-107-20-12-163.compute-1.amazonaws.com:18819") %>/<%= ENV.fetch("18819") %>
+  url: <%= ENV.fetch("redis://:pcaaab2793fe3aa0e0ae093e46cfd8babd250db39062f43dfe09ca69bbfe1fce2@ec2-107-20-12-163.compute-1.amazonaws.com:18819
+") %>/<%= ENV.fetch("6379") %>
   channel_prefix: peeps_platform_api_production
 
 

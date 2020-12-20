@@ -8,14 +8,17 @@ class UserSerializer < ActiveModel::Serializer
     return unless object.avatar.attached?
 
     object.avatar.blob.attributes
-        .slice('filename', 'byte_size')
-        .merge(url: avatar_url)
-        .tap { |attrs| attrs['name'] = attrs.delete('filename') }
-    end
+          .slice('filename', 'byte_size')
+          .merge(url: avatar_url)
+          .tap { |attrs| attrs['name'] = attrs.delete('filename') }
 
-    def avatar_url 
-     url_for(object.avatar)
+    
+  end
 
-    end
+  def avatar_url 
+    url_for(object.avatar)
+
+  end
+
  
 end
