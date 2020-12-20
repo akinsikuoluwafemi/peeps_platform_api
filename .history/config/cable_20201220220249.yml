@@ -9,7 +9,8 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") %>/<%= ENV.fetch("REDIS_PORT") %>
+  url: <%= ENV.fetch("REDIS_URL") %>/<%= ENV.fetch("REDIS_PORT
+") %>
   channel_prefix: peeps_platform_api_production
 
 
