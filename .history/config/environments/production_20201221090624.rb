@@ -43,7 +43,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   config.action_cable.mount_path = "/cable"
-  config.action_cable.url = `wss://peeps-frontend.vercel.app/rooms/#{params[:id]}/cable`
+  config.action_cable.url = "wss://peeps-frontend.vercel.app/cable"
 
 
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
@@ -63,7 +63,7 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
   # config.cache_store = :redis_cache_store, { url: "redis://localhost:6379/0" }
-  config.cache_store = :redis_cache_store, { url: ENV["REDIS_URL"] }
+  config.cache_store = :redis_cache_store, { url: "<%= ENV.fetch("REDIS_URL") %> }
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque

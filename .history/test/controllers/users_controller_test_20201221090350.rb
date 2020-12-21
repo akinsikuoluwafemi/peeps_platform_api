@@ -29,10 +29,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_user_url(@user)
-    assert_response :success
-  end
+  # test "should get edit" do
+  #   get edit_user_url(@user)
+  #   assert_response :success
+  # end
 
   test "should update user" do
     patch user_url(@user), params: { user: { email: @user.email, first_name: @user.first_name, last_name: @user.last_name, password_digest: @user.password_digest } }
@@ -50,6 +50,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
 
   
+
+
+
 
 
 
