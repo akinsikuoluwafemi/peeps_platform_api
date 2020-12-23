@@ -1,5 +1,5 @@
 class RequestsUsersController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
   before_action :set_requests_user, only: [:show, :edit, :update, :destroy]
 
   # GET /requests_users
@@ -65,10 +65,7 @@ class RequestsUsersController < ApplicationController
 
   def fulfilrequest
     # 'updated_at' < 1.day.ago
-    @fulfiled = RequestsUser.where(request_id: params[:id]).count == 5 #&& RequestsUser.where(updated_at: current_user.updated_at.to_time.to_i > 86400 )
-    # RequestsUser.where(updated_at: current_user.updated_at.to_i > 24.hours)
-    #  DateTime.rfc3339('2020-12-14T01:19:54.631Z').to_time.to_i > 24.hours
-    
+    @fulfiled = RequestsUser.where(request_id: params[:id]).count == 5 && RequestsUser.where(updated_at: current_user.updated_at.to_time.to_i > 86400 )
     if @fulfiled
       render json: true
 
@@ -80,6 +77,7 @@ class RequestsUsersController < ApplicationController
   end
 
   
+  # RequestsUser.where(updated_at: current_user.updated_at.to_tim.to_i > 24.hours)
 
 
 
