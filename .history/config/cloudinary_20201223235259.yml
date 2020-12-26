@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: <%= ENV['CLOUD_NAME'] %>
+  api_key: <%= ENV['API_KEY'] %>
+  api_secret: D7_vXN-NhX04x23q9Sh0umhJQb8
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: <%= ENV['CLOUD_NAME'] %>
+  api_key: <%= ENV['API_KEY'] %>
+  api_secret: D7_vXN-NhX04x23q9Sh0umhJQb8
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: <%= ENV['CLOUD_NAME'] %>
+  api_key: <%= ENV['API_KEY'] %>
+  api_secret: D7_vXN-NhX04x23q9Sh0umhJQb8
+  enhance_image_tag: true
+  static_file_support: false
