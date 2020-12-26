@@ -8,6 +8,7 @@ class RequestsUsersController < ApplicationController
     @requests_users = RequestsUser.all
     render json: @requests_users
 
+    # write query here femi
 
   end
 

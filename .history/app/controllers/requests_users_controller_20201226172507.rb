@@ -8,6 +8,7 @@ class RequestsUsersController < ApplicationController
     @requests_users = RequestsUser.all
     render json: @requests_users
 
+    # write query here femi
 
   end
 
@@ -63,8 +64,8 @@ class RequestsUsersController < ApplicationController
   end
 
   def fulfilrequest
-    
-    @fulfiled = RequestsUser.where(request_id: params[:id]).count == 5
+    # 'updated_at' < 1.day.ago
+    @fulfiled = RequestsUser.where(request_id: params[:id]).count == 5 
 
     if @fulfiled
       render json: true
