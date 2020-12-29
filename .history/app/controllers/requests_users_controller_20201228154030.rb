@@ -64,13 +64,11 @@ class RequestsUsersController < ApplicationController
 
   def fulfilrequest
     
-    @fulfiled = RequestsUser.where(request_id: params[:id]).count == 5 
-    
-    
-    # RequestsUser.where(updated_at: current_user.updated_at.to_time.to_i > 86400 )
+    # @fulfiled = RequestsUser.where(request_id: params[:id]).count == 5 
+    @fulfiled = RequestsUser.where(request_id: params[:id]).count < 5 &&  RequestsUser.where(updated_at: current_user.updated_at.to_time.to_i > 86400 )
 
 
-    # && RequestsUser.where(updated_at: current_user.updated_at.to_time.to_i > 86400 )
+    && RequestsUser.where(updated_at: current_user.updated_at.to_time.to_i > 86400 )
   #  RequestsUser.where(updated_at: current_user.updated_at.to_i > 24.hours)
    # DateTime.rfc3339('2020-12-14T01:19:54.631Z').to_time.to_i > 24.hours
 
@@ -87,9 +85,6 @@ class RequestsUsersController < ApplicationController
   end
 
   
- # now = Time.now
-# @inactiveRequests = RequestsUser.group('request_id').having('count(request_id) < 5') & RequestsUser.where(updated_at: (now - 24.hours)..now)
-# render json: @inactiveRequests
 
 
 

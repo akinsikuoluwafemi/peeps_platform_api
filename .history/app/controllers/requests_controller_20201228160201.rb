@@ -29,9 +29,9 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    # @request = Request.new(request_params)
+    @request = Request.new(request_params)
 
-    @request = current_user.requests.build(request_params)
+    # @request = current_user.requests.build(request_params)
 
 
     # respond_to do |format|
@@ -46,6 +46,9 @@ class RequestsController < ApplicationController
       end
     # end
   end
+
+  
+ 
 
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
@@ -81,6 +84,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.require(:request).permit(:description, :lat, :lng, :fulfilled, :request_type, :user_id, :)
+      params.require(:request).permit(:description, :lat, :lng, :fulfilled, :request_type, :user_id)
     end
 end

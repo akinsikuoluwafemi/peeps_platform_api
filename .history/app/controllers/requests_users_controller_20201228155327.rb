@@ -1,5 +1,5 @@
 class RequestsUsersController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
   before_action :set_requests_user, only: [:show, :edit, :update, :destroy]
 
   # GET /requests_users
@@ -87,9 +87,9 @@ class RequestsUsersController < ApplicationController
   end
 
   
- # now = Time.now
+  # now = Time.now
 # @inactiveRequests = RequestsUser.group('request_id').having('count(request_id) < 5') & RequestsUser.where(updated_at: (now - 24.hours)..now)
-# render json: @inactiveRequests
+render json: @inactiveRequests
 
 
 

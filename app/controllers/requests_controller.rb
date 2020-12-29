@@ -47,6 +47,11 @@ class RequestsController < ApplicationController
     # end
   end
 
+# now = Time.now
+# @inactiveRequests = Request.left_outer_joins(:RequestsUser).group('request.id').having('count(request_id) < 5') & & Request.where(updated_at: (now - 24.hours)..now)
+# render json: @inactiveRequests
+
+
  
 
   # PATCH/PUT /requests/1

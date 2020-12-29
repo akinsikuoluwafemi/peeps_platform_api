@@ -29,9 +29,9 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    # @request = Request.new(request_params)
+    @request = Request.new(request_params)
 
-    @request = current_user.requests.build(request_params)
+    # @request = current_user.requests.build(request_params)
 
 
     # respond_to do |format|
@@ -47,19 +47,12 @@ class RequestsController < ApplicationController
     # end
   end
 
-  def fufilrequest
-
-    @click = RequestsUser.where(user_id: current_user, request_id: params[:id]).count == 1
-    if @click
-      render json: true
-
-    else @click
-      render json: false
-
-    end
+#   now = Time.now
+# @inactiveRequests = Request.left_outer_joins(:RequestsUser).group('request.id').having('count(request_id) < 5') & & Request.where(updated_at: (now - 24.hours)..now)
+# render json: @inactiveRequests
 
 
-  end
+ 
 
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
@@ -95,6 +88,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.require(:request).permit(:description, :lat, :lng, :fulfilled, :request_type, :user_id, :click_count)
+      params.require(:request).permit(:description, :lat, :lng, :fulfilled, :request_type, :user_id)
     end
 end
