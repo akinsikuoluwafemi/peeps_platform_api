@@ -1,0 +1,2 @@
+class RequestsRoom < ApplicationRecord
+end
